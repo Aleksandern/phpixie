@@ -15,7 +15,6 @@ class Get
 
     public function get($val)
     {
-        //echo 'get';
         $keys = explode('.', $val);
         if (isset($keys[1])) {
             $group = $keys[0];

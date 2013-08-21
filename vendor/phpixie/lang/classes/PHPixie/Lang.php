@@ -35,18 +35,4 @@ class Lang
         }
         else return $this->get->$method();
     }
-
-    //public function get()
-    //{
-        //$hz =  get_called_class();
-        ////echo $hz;
-        //$get = $this->get;
-        //return $get;
-    //}
-
-    //public function loadLang($name)
-    //{
-        //$this->get->loadLang($name);
-    //}
-
 }
