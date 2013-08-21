@@ -185,12 +185,9 @@ class Request
 	 * @param bool $with_params Whether to preserve URL parameters
 	 * @return string URL of this request
 	 */
-	public function url($with_params = false, $only_domen = false) {
+	public function url($with_params = false) {
 		$url = $this->server('HTTPS') == 'on' ? 'https://':'http://';
-        $url.= $this->server('HTTP_HOST');
-
-        if (!$only_domen) $url .= $this->server('REQUEST_URI');
-        else $url .= '/';
+        $url.= $this->server('HTTP_HOST').$this->server('REQUEST_URI');
 
 		if (!$with_params) {
 			$pos = strpos($url, '?');

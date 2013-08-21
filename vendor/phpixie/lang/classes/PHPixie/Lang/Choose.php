@@ -97,7 +97,10 @@ class Choose
     private function redirPage ($lang, $save_uri= false)
     {
         $uri = '';
-        $url = $this->request->url(false, true);
+        $url = $this->request->url(false);
+        $url = parse_url($url);
+        $url = $url['scheme'].'://'.$url['host'].'/';
+
         if ($save_uri) $uri = '/'.implode('/', $this->uri);
         header ('Location: '.$url.$lang.$uri);
         die();
